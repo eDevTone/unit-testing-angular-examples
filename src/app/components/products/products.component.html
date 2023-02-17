@@ -1,0 +1,17 @@
+<section class="container">
+  <h2>Products component</h2>
+  <h3>Rta</h3>
+  <button class="btn-promise" (click)="callPromise()">Call Promise</button>
+  <p class="rta">{{ rta }}</p>
+  <div class="my-grid">
+    <app-product *ngFor="let product of products" [product]="product">
+    </app-product>
+  </div>
+
+  <button id="get-products" (click)="getAllProducts()" [disabled]="status === 'loading'">
+    <span *ngIf="status === 'init' || 'success'">Load More</span>
+    <span *ngIf="status === 'loading'">Loading...</span>
+    <span *ngIf="status === 'error'">Error</span>
+  </button>
+
+</section>
